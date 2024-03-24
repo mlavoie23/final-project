@@ -1,0 +1,320 @@
+/* Page Elements */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+
+header, footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    width: 100%;
+    background-color: white;
+}
+
+footer {
+    margin-top: auto;
+    justify-content: center;
+    padding: 10px;
+}
+
+.header-image-wrap {
+    margin-bottom: 10px;
+}
+
+.header-image-wrap > img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+}
+
+nav ul li {
+    list-style: none;
+    flex: auto;
+}   
+
+nav ul li a {
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: black;
+    display: inline-block;
+    margin: 5px;
+}   
+
+/* Universal Styling */
+a {
+    color: cornflowerblue;
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 5em;
+    color: cornflowerblue;
+    font-family: 'Miller Text', 'Georgia', serif;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+    /* Tablet */
+    @media(max-width: 940px) {
+    h2 {
+        font-size: 4em;
+    }
+    }
+
+    /* Phone */
+    @media(max-width: 500px) {
+    h2 {
+        font-size: 3em;
+    }
+    }
+
+/* Homepage */
+.bio {
+    margin-left: 400px;
+    margin-right: 400px;
+    text-align: center;
+}
+
+.portrait {
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background: url(../images/portrait.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+    /* Laptop - Smaller Screen */
+    @media(max-width:1200px){
+        [class=bio] {
+            margin: 0 300px 0 300px;
+        }    
+    }
+
+    /* Tablet */
+    @media(max-width: 940px) {
+        [class=bio] {
+            margin: 0 100px 0 100px;
+        }
+    }
+
+    /* Phone */
+    @media(max-width: 500px) {
+        [class=bio] {
+            margin: 0 50px 0 50px;
+        }
+        [class=portrait] {
+            width: 150px;
+        }
+    }
+
+
+/* Design Page */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    margin: 0 300px 0 300px;
+}
+
+.image img {
+    max-width: 300px;
+    float: left;
+    margin: 30px;
+    position: relative;
+}
+
+.description {
+    float: right;
+}
+
+    /* Laptop - Smaller Screen */
+    @media(max-width:1200px){
+        [class=logo] {
+            display:flex;
+            flex-direction: column;
+            text-align: center;
+            margin: 0 200px 0 200px;
+        }    
+    }
+
+    /* Tablet */
+    @media(max-width: 800px) {
+        [class=logo] {
+            margin: 0 100px 0 100px;
+        }
+    }
+
+    /* Phone */
+    @media(max-width: 425px) {
+        [class=logo] {
+            margin: 0 50px 0 50px;
+        }
+        [class=image] img {
+            width:200px;
+        }
+    }
+
+
+/* Contact Page */
+.contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px 400px 0 400px;
+    text-align: center;
+}
+
+.hero p {
+    font-family: 'Miller Text', 'Georgia', serif;
+    font-size: 2em;
+}
+
+    /* Laptop - Smaller Screen */
+    @media(max-width:1250px){
+        [class=contact-wrapper] {
+            margin: 20px 300px 0 300px;
+        }
+        
+        [class=hero] p {
+            font-size: 1.5em;
+        }
+    }
+
+    /* Tablet */
+    @media(max-width: 940px) {
+        [class=contact-wrapper] {
+            margin: 20px 150px 0 150px;
+        }
+        [class=hero] p {
+            font-size: 1.25em;
+        }
+    }
+
+    /* Phone */
+    @media(max-width: 575px) {
+        [class=contact-wrapper] {
+            margin: 20px 50px 0 50px;
+        }
+    }
+
+/* Animations */
+nav ul li a:hover {
+    text-decoration: underline;
+    color:lightslategray;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+nav ul li a:active {
+    background-color:black;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+h2:hover {
+    font-size: 8em;
+    transition: font-size 3s ease;
+}
+
+/* Homepage */
+.portrait::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,0) 45%, rgba(0,0,0,0.5) 65%);
+    top: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.portrait:hover::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgb(100, 149, 237);
+    background: radial-gradient(circle, rgba(0,0,0,0) 45%, rgba(100, 149, 237,0.5) 65%);
+    top: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.decoration {
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+}
+
+.decoration:hover>.flower1 {
+    display: inline-block;
+    transform: rotate(1080deg);
+    transition: transform 5s ease-in-out;
+}
+
+.decoration:hover>.flower2 {
+    display: inline-block;
+    transform: rotate(1080deg);
+    transition: transform 5s ease-in-out 1s;
+}
+
+.decoration:hover>.flower3 {
+    display: inline-block;
+    transform: rotate(1080deg);
+    transition: transform 5s ease-in-out 2s;
+}
+
+.decoration:hover>.flower4 {
+    display: inline-block;
+    transform: rotate(1080deg);
+    transition: transform 5s ease-in-out 3s;
+}
+
+.decoration:hover>.flower5 {
+    display: inline-block;
+    transform: rotate(1080deg);
+    transition: transform 5s ease-in-out 4s;
+}
+
+/* Design Page */
+
+.image:hover {
+    transform: scale(1.2);
+    transition: all 3s ease-in-out 0.5s;
+}
