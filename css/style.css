@@ -106,7 +106,7 @@ h2 {
     margin: auto;
     margin-bottom: 20px;
     border-radius: 50%;
-    background: url(../images/portrait.jpg);
+    background: url(images/portrait.jpg);
     background-size: cover;
     background-position: center;
     position: relative;
